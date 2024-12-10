@@ -1,3 +1,5 @@
 {
-  "hello": "Hello world"
+  "general": {
+    "title": "Dawid Kwasowski"
+  }
 }

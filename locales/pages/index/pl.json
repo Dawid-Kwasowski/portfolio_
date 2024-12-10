@@ -1,1 +1,16 @@
-{}
+{
+  "general": {
+    "title": "Cześć jestem ",
+    "navigation": {
+      "about": "O mnie",
+      "portfolio": "Portfolio",
+      "contact": "Kontakt"
+    }
+  },
+  "main": {
+    "description": {
+      "text": "Doświadczony Frontend Developer z Gdańska, z tytułem inżyniera w dziedzinie IT. Specjalista w tworzeniu aplikacji webowych, z  3-letnim doświadczeniem w budowaniu responsywnych interfejsów użytkownika. Pasjonat nowoczesnych technologii webowych.",
+      "title": "console.log(“Hello world”);_"
+    }
+  }
+}
