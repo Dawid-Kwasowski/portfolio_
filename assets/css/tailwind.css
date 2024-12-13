@@ -9,6 +9,23 @@
 }
 
 @layer utilities {
+
+    .scrollbar::-webkit-scrollbar {
+        height: 6px;
+        margin-top: 5px
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        border-radius: 100vh;
+        background: rgba(247, 247, 255, 0.39);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 100vh;
+        border: 3px solid #f6f7ed;
+    }
+
     .mask-image {
         mask-image: linear-gradient(
             to bottom,
