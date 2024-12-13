@@ -1,27 +1,30 @@
 <script setup lang="ts">
   import type {IAppNavigation} from "~/components/AppNavigation/model/IAppNavigation";
-  import {useInitAnimations} from "~/stores/initialAnimation";
+  import anime from "animejs";
 
   const routes: IAppNavigation[] = [
-    {name: 'About', link: ''},
+    {name: 'About', link: '/'},
     {name: 'Projects', link: '/projects'},
-    {name: 'Contact', link: '/contact'},
+    // {name: 'Contact', link: '/contact'},
   ]
 
 
   const {isMobile} = useDevice()
 
   onMounted(() => {
-    const { mainTl } = useInitAnimations()
+    const introTl = anime.timeline({
+      duration: 400,
+    })
 
-    mainTl.add({
+    introTl.add({
       targets: "#divider",
       width: '100%',
       easing: 'easeInOutQuad',
       direction: 'alternate',
+
     })
 
-    mainTl.add({
+    introTl.add({
       targets: "#divider",
       height: '100vh',
       easing: 'easeInOutQuad',
@@ -36,7 +39,7 @@
     <div id="divider" class="h-[5px] bg-primary absolute z-0 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"></div>
     <app-navigation :items="routes"/>
     <NuxtRouteAnnouncer/>
-    <main id="page" >
+    <main id="page" class="pt-20 z-50 relative">
       <NuxtPage/>
     </main>
     <footer v-if="isMobile">
@@ -46,3 +49,14 @@
     </footer>
   </div>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>

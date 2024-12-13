@@ -19,10 +19,20 @@ export default {
           '50%': {
             transform: 'translateX(50%)',
           }
-        }
+        },
+        'scroll': {
+          from: {
+            transform: 'translateY(0%)',
+          },
+          to: {
+            transform: "translateY(-100%)",
+          }
+        },
       },
       animation: {
         'move-right': 'move-right 2s ease-in-out infinite',
+        'scroll-down': 'scroll 60s -3s linear infinite reverse',
+        'scroll-up': 'scroll 30s -3s linear infinite',
       },
       colors: {
         primary: "#040403",
