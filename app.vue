@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import type {IAppNavigation} from "~/components/AppNavigation/model/IAppNavigation";
-  import anime from "animejs";
 
   const routes: IAppNavigation[] = [
     {name: 'About', link: '/'},
@@ -8,37 +7,13 @@
     // {name: 'Contact', link: '/contact'},
   ]
 
-
   useHead({
     bodyAttrs: {
       class: 'bg-primary'
     }
   })
 
-
   const {isMobile} = useDevice()
-
-  // onMounted(() => {
-  //   const introTl = anime.timeline({
-  //     duration: 400,
-  //   })
-  //
-  //   introTl.add({
-  //     targets: "#divider",
-  //     width: '100%',
-  //     easing: 'easeInOutQuad',
-  //     direction: 'alternate',
-  //
-  //   })
-  //
-  //   introTl.add({
-  //     targets: "#divider",
-  //     height: '100vh',
-  //     easing: 'easeInOutQuad',
-  //     direction: 'alternate',
-  //   })
-  // })
-
 
 </script>
 <template>

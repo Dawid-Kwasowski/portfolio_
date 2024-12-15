@@ -1,8 +1,12 @@
 <script setup lang="ts">
 
 import anime from "animejs";
+import {useRepositories} from "~/composables/repositories";
 
 const { t } = useI18n()
+const repos = useRepositories()
+
+
 
 onMounted(() => {
   const projectsTl = anime.timeline({
@@ -36,7 +40,7 @@ onMounted(() => {
 <template>
   <div class="px-5">
     <div class="flex flex-col mx-2">
-      <div class="">
+      <div>
         <app-header>
           {{t('stack.title')}}
         </app-header>
@@ -49,9 +53,13 @@ onMounted(() => {
           {{t('stack.description')}}
         </div>
       </div>
-      <div id="projects-carousel">
-        <app-carousel />
+      <div id="projects-carousel" class="mt-5">
+        <div class="text-3xl font-bold">{{t('stack.projects')}}</div>
+        <div>
+          <app-carousel :items="repos.nodes"/>
+        </div>
       </div>
+
     </div>
     <div class="bg-secondary size-[150px] md:size-[300px] rounded-full blur-[200px] fixed top-1/4 right-2.5 animate-pulse"></div>
     <div class="bg-secondary size-[150px] md:size-[300px] rounded-full blur-[200px] fixed bottom-2.5 left-2.5 animate-pulse"></div>
