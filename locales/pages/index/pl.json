@@ -9,8 +9,10 @@
   },
   "main": {
     "description": {
-      "text": "Doświadczony Frontend Developer z Gdańska, z tytułem inżyniera w dziedzinie IT. Specjalista w tworzeniu aplikacji webowych, z  3-letnim doświadczeniem w budowaniu responsywnych interfejsów użytkownika. Pasjonat nowoczesnych technologii webowych.",
-      "title": "console.log(“Hello world”);_"
+      "part1": "I am a versatile software developer with 3 years of\nexperience, currently based in Gdańsk, originally from\nJelenia Góra in Lower Silesia. My expertise spans multiple\nlayers of the technology stack, with particular\nproficiency in the Vue framework.",
+      "part2": "Throughout my career,\nI have not only developed projects but also actively\nparticipated in their deployment, giving me a\ncomprehensive understanding of the software lifecycle\nfrom conception to production.",
+      "title": "Frontend Developer",
+      "more": "See more about me"
     }
   }
 }
