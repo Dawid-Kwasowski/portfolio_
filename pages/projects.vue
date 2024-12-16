@@ -6,8 +6,6 @@ import {useRepositories} from "~/composables/repositories";
 const { t } = useI18n()
 const repos = useRepositories()
 
-
-
 onMounted(() => {
   const projectsTl = anime.timeline({
     easing: 'easeInExpo',
@@ -53,7 +51,7 @@ onMounted(() => {
           {{t('stack.description')}}
         </div>
       </div>
-      <div id="projects-carousel" class="mt-5">
+      <div id="projects-carousel">
         <div class="text-3xl font-bold">{{t('stack.projects')}}</div>
         <div>
           <app-carousel :items="repos.nodes"/>
