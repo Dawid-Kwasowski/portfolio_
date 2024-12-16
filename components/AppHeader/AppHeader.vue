@@ -25,7 +25,7 @@
 <template>
   <div>
     <header class="select-none overflow-hidden">
-      <h1 id="text" class="text-5xl md:text-7xl text-tertiary font-custom font-semibold ">
+      <h1 id="text" class="text-4xl md:text-7xl text-tertiary font-custom font-semibold ">
         <slot></slot>
       </h1>
     </header>

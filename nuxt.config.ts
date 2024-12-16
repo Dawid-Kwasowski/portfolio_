@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     'nuxt-icons',
     '@pinia/nuxt',
-    '@nuxtjs/device'
   ],
   pinia: {
     storesDirs: ['./composables/**']

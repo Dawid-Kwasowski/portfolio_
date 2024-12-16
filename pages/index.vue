@@ -3,8 +3,7 @@
   import anime from "animejs";
 
   const { t } = useI18n()
-  const { isMobile } = useDevice()
-
+  const {isMobile} = useDevice()
   onMounted(() => {
 
     const indexTl = anime.timeline({
@@ -59,10 +58,8 @@
             <h5 class="mr-2">{{t('main.description.more')}}</h5>
             <nuxt-icon class="animate-move-right" name="arrow"></nuxt-icon>
           </div>
-          <template v-if="!isMobile">
             <div class="bg-secondary h-[1px] my-5"></div>
             <app-socials />
-          </template>
         </div>
       </div>
 

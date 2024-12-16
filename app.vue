@@ -1,27 +1,46 @@
 <script setup lang="ts">
-  import type {IAppNavigation} from "~/components/AppNavigation/model/IAppNavigation";
+  import type {IAppNavigationProps} from "~/components/AppNavigation/model/IAppNavigationProps";
+  import anime from "animejs";
+  const {isMobile} = useDevice()
+  const route = useRoute()
 
-  const routes: IAppNavigation[] = [
+  const routes: IAppNavigationProps[] = [
     {name: 'About', link: '/'},
     {name: 'Projects', link: '/projects'},
     // {name: 'Contact', link: '/contact'},
   ]
 
   useHead({
+    title: computed(() => {
+      return route.name?.toString() +  ' | Dawid'
+    }),
     bodyAttrs: {
-      class: 'bg-primary'
+      class: 'bg-primary overflow-x-hidden'
     }
   })
 
-  const {isMobile} = useDevice()
+
+  onMounted(() => {
+    anime({
+      targets: '#navigation',
+      easing: 'easeInExpo',
+      duration: 500,
+      delay: 200,
+      opacity: [0,1],
+    })
+  })
 
 </script>
 <template>
   <div class="h-screen w-screen text-tertiary">
-<!--    <div id="divider" class="h-[5px] bg-primary absolute z-0 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"></div>-->
-    <app-navigation :items="routes"/>
+    <div id="navigation">
+      <app-navigation-mobile :items="routes" v-if="isMobile"/>
+      <app-navigation v-else :items="routes"/>
+    </div>
+
+
     <NuxtRouteAnnouncer/>
-    <main id="page" class="pt-20 z-50 relative">
+    <main class="pt-20 z-50 relative">
       <NuxtPage/>
     </main>
     <footer v-if="isMobile">
