@@ -16,12 +16,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-i18n-micro',
     '@nuxt/fonts',
-    'nuxt-icons',
-    '@pinia/nuxt',
+    'nuxt-icons'
   ],
-  pinia: {
-    storesDirs: ['./composables/**']
-  },
   fonts: {
     families: [
       {name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal']}

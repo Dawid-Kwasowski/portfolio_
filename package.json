@@ -21,7 +21,6 @@
     "nuxt-i18n-micro": "^1.33.0",
     "nuxt-icons": "^3.2.1",
     "octokit": "^4.0.2",
-    "pinia": "^2.3.0",
     "vue": "latest",
     "vue-router": "latest"
   },

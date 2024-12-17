@@ -3,13 +3,13 @@
   import anime from "animejs";
   const {isMobile} = useDevice()
   const route = useRoute()
+  const router = useRouter()
 
   const routes: IAppNavigationProps[] = [
     {name: 'About', link: '/'},
     {name: 'Projects', link: '/projects'},
-    // {name: 'Contact', link: '/contact'},
+    {name: 'Contact', link: '/contact'},
   ]
-
   useHead({
     title: computed(() => {
       return route.name?.toString() +  ' | Dawid'
