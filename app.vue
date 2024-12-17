@@ -11,9 +11,9 @@
     {name: 'Contact', link: '/contact'},
   ]
   useHead({
-    title: computed(() => {
-      return route.name?.toString() +  ' | Dawid'
-    }),
+    // title: computed(() => {
+    //   return route.name?.toString() +  ' | Dawid'
+    // }),
     bodyAttrs: {
       class: 'bg-primary overflow-x-hidden'
     }
