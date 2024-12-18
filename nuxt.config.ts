@@ -6,6 +6,12 @@ export default defineNuxtConfig({
       mode: 'out-in',
     }
   },
+  imports: {
+    dirs: [
+        'composables',
+        'composables/*/*.ts'
+    ]
+  },
   compatibilityDate: '2024-11-01',
   typescript: {typeCheck: true},
   devtools: { enabled: true },

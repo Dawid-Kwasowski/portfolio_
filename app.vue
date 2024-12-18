@@ -11,9 +11,6 @@
     {name: 'Contact', link: '/contact'},
   ]
   useHead({
-    // title: computed(() => {
-    //   return route.name?.toString() +  ' | Dawid'
-    // }),
     bodyAttrs: {
       class: 'bg-primary overflow-x-hidden'
     }
@@ -49,6 +46,7 @@
       </div>
     </footer>
   </div>
+  <app-toast/>
 </template>
 <style>
 .page-enter-active,
