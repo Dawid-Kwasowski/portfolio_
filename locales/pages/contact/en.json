@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "validation": {
+        "required": "This field is required",
+        "email": "Invalid email address"
+      },
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send"
+      }
+    }
+  }
+}

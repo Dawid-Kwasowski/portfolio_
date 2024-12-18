@@ -17,11 +17,20 @@ export default defineNuxtConfig({
     'nuxt-i18n-micro',
     '@nuxt/fonts',
     'nuxt-icons',
-    '@pinia/nuxt',
+    ['nuxt-mail', {
+      message: {
+        to: 'dawidkwasowski@gmail.com',
+      },
+      smtp: {
+        host: process.env.NUXT_SMTP_HOST,
+        port: process.env.NUXT_SMTP_PORT,
+        auth: {
+          user: process.env.NUXT_SMTP_USER,
+          pass: process.env.NUXT_SMTP_PASS,
+        }
+      },
+    }]
   ],
-  pinia: {
-    storesDirs: ['./composables/**']
-  },
   fonts: {
     families: [
       {name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal']}

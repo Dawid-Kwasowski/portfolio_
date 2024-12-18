@@ -10,7 +10,7 @@
 
 <template>
   <div :style="{width: props.width, height: props.height}"
-      class="border-2 border-tertiary/30 rounded-2xl">
+      class="border-2 border-tertiary/30 rounded-2xl bg-secondary/10">
     <div class="flex flex-col justify-between h-full p-5">
       <div>
         <slot v-if="$slots.header" name="header"></slot>

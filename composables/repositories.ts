@@ -3,7 +3,7 @@ export const useRepositories = () => {
     const octokit: Octokit = new Octokit({auth: process.env.NUXT_ACCESS_TOKEN});
 
     const getPinnedRepos = async (): Promise<any> => {
-        const {user: {pinnedItems}} = await octokit.graphql<any>(`
+        const { user: { pinnedItems } } = await octokit.graphql<any>(`
         query {
             user(login: "Dawid-Kwasowski") {
                 pinnedItems(first: 6, types: REPOSITORY) {
@@ -28,6 +28,8 @@ export const useRepositories = () => {
     `)
         return pinnedItems
     }
-    const {data} = useAsyncData<any>('repositories', async (): Promise<any> =>  await getPinnedRepos())
+    const {data} = useAsyncData<any>('repositories', async (): Promise<any> =>  await getPinnedRepos(), {
+        lazy: true,
+    })
     return useState<any>('repositories', () => data)
 }
