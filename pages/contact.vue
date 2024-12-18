@@ -3,10 +3,11 @@
 import AppCard from "~/components/AppCard/AppCard.vue";
 import anime from "animejs";
 import AppControlTextarea from "~/components/AppControl/Textarea/AppControlTextarea.vue";
+import {useMail} from "#imports";
 
 
 const {t} = useI18n()
-
+const mail = useMail()
 
 onMounted(() => {
   anime({
@@ -51,10 +52,20 @@ const validateForm = function () {
   })
 }
 
+
+const sendMail =  function () {
+  mail.send({
+    from: form.name,
+    subject: `Wiadomość od ${form.email} | ${form.name}`,
+    text: form.message
+  })
+}
+
+
 const submit = function () {
   validateForm()
   if(Object.entries(errors.value).length > 0) return
-
+  sendMail()
 }
 
 </script>

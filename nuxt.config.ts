@@ -16,7 +16,20 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-i18n-micro',
     '@nuxt/fonts',
-    'nuxt-icons'
+    'nuxt-icons',
+    ['nuxt-mail', {
+      message: {
+        to: 'dawidkwasowski@gmail.com',
+      },
+      smtp: {
+        host: process.env.NUXT_SMTP_HOST,
+        port: process.env.NUXT_SMTP_PORT,
+        auth: {
+          user: process.env.NUXT_SMTP_USER,
+          pass: process.env.NUXT_SMTP_PASS,
+        }
+      },
+    }]
   ],
   fonts: {
     families: [
