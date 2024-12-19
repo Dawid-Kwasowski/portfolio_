@@ -1,0 +1,14 @@
+{
+  "notifications": {
+    "success": {
+      "title": "Success"
+    },
+    "error": {
+      "title": "Error"
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Invalid email address"
+  }
+}

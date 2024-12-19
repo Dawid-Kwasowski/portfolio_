@@ -35,7 +35,7 @@
 
 
     <NuxtRouteAnnouncer/>
-    <main class="pt-20 z-50 relative xl:max-w-[1300px] xl:flex xl:justify-center">
+    <main class="pt-20 z-50 relative xl:max-w-[1300px] xl:mx-auto">
       <NuxtPage/>
     </main>
     <footer v-if="isMobile && route.name !== 'index'">
