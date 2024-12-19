@@ -9,10 +9,20 @@ import {useMail} from "#imports";
 const {t} = useI18n()
 const mail = useMail()
 const {success, error} = useToast()
-
+const {isMobile} = useDevice()
 onMounted(() => {
-  anime({
-    delay: 700,
+  const tl = anime.timeline({
+    easing: 'easeInOutQuad',
+    duration: 500,
+    delay: 600,
+  })
+  tl.add({
+    targets: '#contact-description',
+    translateY: [10,0],
+    easing: "easeInOutQuad",
+    opacity: [0,1],
+  })
+  tl.add({
     targets: '#contact-form',
     translateY: [10,0],
     easing: "easeInOutQuad",
@@ -86,8 +96,16 @@ const submit = function () {
 <template>
   <div class="p-5">
     <app-header>
-      <{{t('contact.title')}}/>
+      # {{t('contact.title')}}
     </app-header>
+    <div id="contact-description" class="py-5 max-w-[750px] text-sm md:text-lg font-bold leading-7 text-tertiary/80">
+      <div class="mb-3">
+        {{t('contact.description.part0')}}
+      </div>
+      <div>
+        {{t('contact.description.part1')}}
+      </div>
+    </div>
     <div id="contact-form" class="mt-5">
       <app-card height="100%" width="100%">
         <template #body>
@@ -100,7 +118,7 @@ const submit = function () {
                 <app-control-input :error-message="errors.name" v-model="form.name" :label="`${t('contact.form.fields.name')}`"/>
                 <app-control-input :error-message="errors.email" v-model="form.email" :label="`${t('contact.form.fields.email')}`"/>
                 <app-control-textarea :error-message="errors.message" v-model="form.message" :label="`${t('contact.form.fields.message')}`"/>
-                <app-button >
+                <app-button :block="isMobile">
                   {{t('contact.form.fields.send')}}
                 </app-button>
               </form>

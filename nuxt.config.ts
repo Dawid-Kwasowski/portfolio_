@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: [
         'composables',
-        'composables/*/*.ts'
     ]
   },
   compatibilityDate: '2024-11-01',
@@ -37,6 +36,11 @@ export default defineNuxtConfig({
       },
     }]
   ],
+  runtimeConfig: {
+    public: {
+      accessToken: process.env.NUXT_ACCESS_TOKEN
+    }
+  },
   fonts: {
     families: [
       {name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal']}

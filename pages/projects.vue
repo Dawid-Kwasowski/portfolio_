@@ -4,9 +4,10 @@ import anime from "animejs";
 import {useRepositories} from "~/composables/repositories";
 
 const { t } = useI18n()
-const repos = useRepositories()
-
+const {repositories, getPinnedRepos} = useRepositories()
+getPinnedRepos()
 onMounted(() => {
+
   const projectsTl = anime.timeline({
     easing: 'easeInExpo',
     duration: 500,
@@ -47,14 +48,14 @@ onMounted(() => {
         <div id="marquee" class="basis-1/2">
           <app-marquee />
         </div>
-        <div id="projects-description" class="basis-1/2 md:p-20 text-2xl">
+        <div id="projects-description" class="basis-1/2 md:p-20 text-2xl text-tertiary/80">
           {{t('stack.description')}}
         </div>
       </div>
       <div id="projects-carousel">
         <div class="text-3xl font-bold">{{t('stack.projects')}}</div>
         <div>
-          <app-carousel :items="repos.nodes"/>
+          <app-carousel :items="repositories"/>
         </div>
       </div>
 
