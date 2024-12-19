@@ -3,7 +3,6 @@
   import anime from "animejs";
   const {isMobile} = useDevice()
   const route = useRoute()
-  const router = useRouter()
 
   const routes: IAppNavigationProps[] = [
     {name: 'About', link: '/'},
@@ -16,7 +15,7 @@
     }
   })
 
-
+console.log(route.name)
   onMounted(() => {
     anime({
       targets: '#navigation',
@@ -40,7 +39,7 @@
     <main class="pt-20 z-50 relative">
       <NuxtPage/>
     </main>
-    <footer v-if="isMobile">
+    <footer v-if="isMobile && route.name !== 'index'">
       <div class="w-full  bottom-0 left-0 p-5 bg-primary/80 z-50 text-2xl flex justify-evenly backdrop-blur-3xl mt-20">
         <app-socials />
       </div>
