@@ -55,7 +55,6 @@
         <div class="max-w-fit text-2xl mt-5">
           <div class="flex items-center cursor-pointer">
             <h5 class="mr-2">{{t('main.description.more')}}</h5>
-            <nuxt-icon class="animate-move-right" name="arrow"></nuxt-icon>
           </div>
             <div class="bg-secondary h-[1px] my-5"></div>
             <app-socials />
