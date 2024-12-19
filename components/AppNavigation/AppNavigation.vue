@@ -15,7 +15,7 @@
          before:left-1/2
          before:transition-[width]
         " v-for="(item, index) in props.items" :key="index">
-        <nuxt-link :to="item.link">
+        <nuxt-link active-class="before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:bg-tertiary before:h-[2px] before:w-full before:rounded-full" :to="item.link">
           {{item.name}}
         </nuxt-link>
       </div>

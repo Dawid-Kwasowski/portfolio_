@@ -19,8 +19,8 @@ onMounted(() => {
 
 <template>
   <div id="item-list" class="flex flex-col items-center mt-20 gap-5">
-    <div v-for="(item, index) in props.items" :key="index" class="text-4xl el" @click="emit('select')">
-      <nuxt-link :to="item.link">
+    <div v-for="(item, index) in props.items" :key="index" class="text-6xl el relative" @click="emit('select')">
+      <nuxt-link active-class="before:absolute before:-bottom-2 before:left-1/2 before:-translate-x-1/2 before:bg-tertiary before:h-[2px] before:w-full  before:rounded-full" :to="item.link">
         {{item.name}}
       </nuxt-link>
     </div>
