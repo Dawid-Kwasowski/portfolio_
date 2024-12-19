@@ -48,7 +48,7 @@ onMounted(() => {
         <div id="marquee" class="basis-1/2">
           <app-marquee />
         </div>
-        <div id="projects-description" class="basis-1/2 md:p-20 text-2xl">
+        <div id="projects-description" class="basis-1/2 md:p-20 text-2xl text-tertiary/80">
           {{t('stack.description')}}
         </div>
       </div>

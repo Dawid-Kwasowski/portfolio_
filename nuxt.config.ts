@@ -9,7 +9,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: [
         'composables',
-        'composables/*/*.ts'
     ]
   },
   compatibilityDate: '2024-11-01',

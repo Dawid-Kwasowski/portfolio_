@@ -44,7 +44,7 @@
       </h2>
 
       <div id="description" class="opacity-0">
-        <div class="py-5 max-w-[700px] text-sm md:text-lg  font-bold leading-7">
+        <div class="py-5 max-w-[700px] text-sm md:text-lg font-bold leading-7 text-tertiary/80">
           <div class="mb-3">
             {{t('main.description.part1')}}
           </div>
@@ -53,7 +53,6 @@
           </div>
         </div>
         <div class="max-w-fit text-2xl mt-5">
-
           <div class="flex items-center cursor-pointer">
             <h5 class="mr-2">{{t('main.description.more')}}</h5>
             <nuxt-icon class="animate-move-right" name="arrow"></nuxt-icon>

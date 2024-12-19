@@ -12,10 +12,9 @@
   useHead({
     bodyAttrs: {
       class: 'bg-primary overflow-x-hidden'
-    }
+    },
+    title: 'Dawid | Portfolio 👨‍💻'
   })
-
-console.log(route.name)
   onMounted(() => {
     anime({
       targets: '#navigation',
@@ -36,7 +35,7 @@ console.log(route.name)
 
 
     <NuxtRouteAnnouncer/>
-    <main class="pt-20 z-50 relative">
+    <main class="pt-20 z-50 relative xl:max-w-[1300px] xl:flex xl:justify-center">
       <NuxtPage/>
     </main>
     <footer v-if="isMobile && route.name !== 'index'">
