@@ -1,35 +1,14 @@
 import {Octokit} from "@octokit/core";
 export const useRepositories = () => {
-    const octokit: Octokit = new Octokit({auth: process.env.NUXT_ACCESS_TOKEN});
+    const repositories = useState<any[]>('repositories', () => []);
 
     const getPinnedRepos = async (): Promise<any> => {
-        const { user: { pinnedItems } } = await octokit.graphql<any>(`
-        query {
-            user(login: "Dawid-Kwasowski") {
-                pinnedItems(first: 6, types: REPOSITORY) {
-                  nodes {
-                    ... on Repository {
-                      name
-                      description
-                      repositoryTopics(first: 10) {
-                        edges {
-                          node {
-                            topic {
-                              name
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-            }
-        }
-    `)
-        return pinnedItems
+        const {data} = await useFetch('/api/github')
+        repositories.value = data.value.nodes
     }
-    const {data} = useAsyncData<any>('repositories', async (): Promise<any> =>  await getPinnedRepos(), {
-        lazy: true,
-    })
-    return useState<any>('repositories', () => data)
+
+    return {
+        repositories,
+        getPinnedRepos
+    }
 }

@@ -37,6 +37,11 @@ export default defineNuxtConfig({
       },
     }]
   ],
+  runtimeConfig: {
+    public: {
+      accessToken: process.env.NUXT_ACCESS_TOKEN
+    }
+  },
   fonts: {
     families: [
       {name: 'Inter', provider: 'google', weights: [400, 600, 700], styles: ['normal']}
