@@ -48,7 +48,6 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      { code: 'pl', iso: 'pl-PL' },
       { code: 'en', iso: 'en-GB' },
     ],
     defaultLocale: 'en',
