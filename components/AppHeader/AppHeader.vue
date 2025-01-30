@@ -16,7 +16,7 @@
       duration: 1000,
       elasticity: 600,
       delay: (el, i) => 60 * (i+1),
-      translateY: [100,0]
+      translateY: [0,-100]
     })
   })
 
@@ -25,7 +25,7 @@
 <template>
   <div>
     <header class="select-none overflow-hidden">
-      <h1 id="text" class="text-3xl md:text-7xl text-tertiary font-custom font-semibold text-balance ">
+      <h1 id="text" class="text-3xl md:text-7xl text-tertiary font-custom font-semibold text-balance translate-y-[100px]">
         <slot></slot>
       </h1>
     </header>

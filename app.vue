@@ -20,7 +20,7 @@
       targets: '#navigation',
       easing: 'easeInExpo',
       duration: 500,
-      delay: 200,
+      delay: 500,
       opacity: [0,1],
     })
   })
@@ -28,7 +28,7 @@
 </script>
 <template>
   <div class="h-screen w-screen text-tertiary">
-    <div id="navigation">
+    <div id="navigation" class="opacity-0">
       <app-navigation-mobile :items="routes" v-if="isMobile"/>
       <app-navigation v-else :items="routes"/>
     </div>
