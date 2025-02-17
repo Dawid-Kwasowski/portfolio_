@@ -1,0 +1,61 @@
+<script setup lang="ts">
+import type {IAppNavigationProps} from "~/components/AppNavigation/model/IAppNavigationProps";
+import anime from "animejs";
+const {isMobile} = useDevice()
+const route = useRoute()
+const routes: IAppNavigationProps[] = [
+  {name: 'About', link: '/'},
+  {name: 'Projects', link: '/projects'},
+  {name: 'Contact', link: '/contact'},
+]
+
+
+useHead({
+  bodyAttrs: {
+    class: 'bg-primary overflow-x-hidden'
+  },
+  title: 'Dawid | Portfolio 👨‍💻'
+})
+onMounted(() => {
+  anime({
+    targets: '#navigation',
+    easing: 'easeInExpo',
+    duration: 500,
+    delay: 500,
+    opacity: [0,1],
+  })
+})
+
+</script>
+
+<template>
+<div>
+  <div id="navigation" class="opacity-0">
+    <app-navigation-mobile :items="routes" v-if="isMobile"/>
+    <app-navigation v-else :items="routes"/>
+  </div>
+
+  <main class="pt-20 z-50 relative xl:max-w-[1300px] xl:mx-auto">
+    <slot />
+  </main>
+
+  <footer v-if="isMobile && route.name !== 'index'">
+    <div class="w-full  bottom-0 left-0 p-5 bg-primary/80 z-50 text-2xl flex justify-evenly backdrop-blur-3xl mt-20">
+      <app-socials />
+    </div>
+  </footer>
+</div>
+
+</template>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>
